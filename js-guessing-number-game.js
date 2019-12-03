@@ -1,6 +1,33 @@
 /* ---------- NUMBER GUESSING GAME ---------- */
 
-/* --- 1st ATTEMPT --- */
+
+/* --- 2ND ATTEMPT --- */
+
+function guessNumber(randomNumber, message, maxGuesses, totalGuesses = 1) {
+    if (totalGuesses > maxGuesses) {
+        return "Sorry. The correct answer was " + randomNumber + ".";
+    }
+
+    const guess = prompt(message)
+
+    if(parseInt(guess) === randomNumber) {
+        return "Nice guess! " + guess + " was the answer!";
+    }
+
+    if(parseInt(guess) < randomNumber) {
+        return guessNumber(randomNumber, "Sorry, the " + randomNumber + " is higher than " + guess + ". You have one guess left!", maxGuesses, totalGuesses + 1);
+    }
+
+    if(parseInt(guess) > randomNumber) {
+        return guessNumber(randomNumber, "Sorry, the " + randomNumber + " is less than " + guess + ". You have one guess left!", maxGuesses, totalGuesses + 1);
+    }
+}
+
+const randomNumber = Math.floor(Math.random() * 10) + 1;
+const message = guessNumber(randomNumber, "Guess a random number between 1 and 6!", 2);
+alert(message)
+
+/* --- 1st ATTEMPT --- ||
 
 // Variables
 
@@ -35,6 +62,4 @@ if (correctGuess) {
     document.write('<p>Bummer! You lose!</p>')
 }
 
-
-/* -------- 2ND ATTEMPT -------- */
-
+    || --- 1ST ATTEMPT--- */
