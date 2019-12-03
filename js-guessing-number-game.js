@@ -5,13 +5,13 @@
 
 function guessNumber(randomNumber, message, maxGuesses, totalGuesses = 1) {
     if (totalGuesses > maxGuesses) {
-        return "Sorry. The correct answer was " + randomNumber + ".";
+        return "Sorry. The correct answer was " + randomNumber + "!";
     }
 
     const guess = prompt(message);
 
     if(parseInt(guess) === randomNumber) {
-        return "Nice guess! " + guess + " was the answer!";
+        return "Nice guess! " + guess + " is right!";
     }
 
     if(parseInt(guess) < randomNumber) {
