@@ -8,22 +8,22 @@ function guessNumber(randomNumber, message, maxGuesses, totalGuesses = 1) {
         return "Sorry. The correct answer was " + randomNumber + ".";
     }
 
-    const guess = prompt(message)
+    const guess = prompt(message);
 
     if(parseInt(guess) === randomNumber) {
         return "Nice guess! " + guess + " was the answer!";
     }
 
     if(parseInt(guess) < randomNumber) {
-        return guessNumber(randomNumber, "Sorry, the " + randomNumber + " is higher than " + guess + ". You have one guess left!", maxGuesses, totalGuesses + 1);
+        return guessNumber(randomNumber, "Sorry, the number is higher than " + guess + ". You have one guess left!", maxGuesses, totalGuesses + 1);
     }
 
     if(parseInt(guess) > randomNumber) {
-        return guessNumber(randomNumber, "Sorry, the " + randomNumber + " is less than " + guess + ". You have one guess left!", maxGuesses, totalGuesses + 1);
+        return guessNumber(randomNumber, "Sorry, the number is less than " + guess + ". You have one guess left!", maxGuesses, totalGuesses + 1);
     }
 }
 
-const randomNumber = Math.floor(Math.random() * 10) + 1;
+const randomNumber = Math.floor(Math.random() * 6) + 1;
 const message = guessNumber(randomNumber, "Guess a random number between 1 and 6!", 2);
 alert(message)
 
