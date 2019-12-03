@@ -27,4 +27,6 @@ else if (firstGuess > randomNumber) {
 
 if (correctGuess) {
     document.write('<p>Boom! You guessed the number!</p>')
+} else {
+    document.write('<p>Bummer! You lose!</p>')
 }
