@@ -1,12 +1,16 @@
-/* Number Guessing Game */
+/* ---------- NUMBER GUESSING GAME ---------- */
 
+/* --- 1st ATTEMPT --- */
 
 // Variables
+
 var correctGuess = false;
 var randomNumber = Math.floor(Math.random() * 6) + 1;
 var firstGuess = prompt("Guess a random number between 1 and 6!")
 
+
 // Conditionals
+
 if (parseInt(firstGuess) === randomNumber) {
     correctGuess = true;
 } 
@@ -30,3 +34,7 @@ if (correctGuess) {
 } else {
     document.write('<p>Bummer! You lose!</p>')
 }
+
+
+/* -------- 2ND ATTEMPT -------- */
+
