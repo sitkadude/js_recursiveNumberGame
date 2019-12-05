@@ -5,7 +5,15 @@
 
 function guessNumber(randomNumber, message, maxGuesses, totalGuesses = 1) {
     if (totalGuesses > maxGuesses) {
-        return "Sorry. The correct answer was " + randomNumber + "!";
+        const response = prompt("Sorry. The correct answer was " + randomNumber + "! Would you like to play again?");
+        
+        if (response.toUpperCase() === "YES") {
+            guessNumber(randomNumber, "Guess a random number between 1 and 6!", 2);
+        }
+
+        if (response.toUpperCase() === "NO") {
+            return "Thank you for playing!";
+        }    
     }
 
     const guess = prompt(message);
