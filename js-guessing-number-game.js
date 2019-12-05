@@ -4,16 +4,17 @@
 /* --- 2ND ATTEMPT --- */
 
 function guessNumber(randomNumber, message, maxGuesses, totalGuesses = 1) {
-    if (totalGuesses > maxGuesses) {
-        const response = prompt("Sorry. The correct answer was " + randomNumber + "! Would you like to play again?");
-        
-        if (response.toUpperCase() === "YES") {
-            guessNumber(randomNumber, "Guess a random number between 1 and 6!", 2);
-        }
 
-        if (response.toUpperCase() === "NO") {
-            return "Thank you for playing!";
-        }    
+    if (totalGuesses > maxGuesses) {
+        const response = prompt("Sorry. The correct answer was " + randomNumber + "! Would you like to play again?");   
+    }
+
+    if (typeof response !== "undefined" && response.toUpperCase() === "NO") {
+        return "Thank you for playing!";
+    } 
+
+    if (typeof response !== "undefined" && response.toUpperCase() === "YES") {
+        guessNumber(randomNumber, "Guess a random number between 1 and 6!", 2);
     }
 
     const guess = prompt(message);
