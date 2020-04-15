@@ -1,2 +1,2 @@
-# js-guess-number-game
-This is a guessing game written in JS.
+This is number guessing game that I wrote with a JS recursive function.
+
